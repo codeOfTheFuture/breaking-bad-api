@@ -12,3 +12,9 @@
   margin: auto;
   outline: none;
 }
+
+@media (max-width: 500px) {
+  .formControl {
+    width: 100%;
+  }
+}
