@@ -1,15 +1,13 @@
 import React, { FC } from "react";
 import Image from "next/image";
-import styles from "../../styles/Home.module.css";
+import styles from "./styles/Header.module.css";
 import logo from "../../public/assets/logo.png";
 
 const Header: FC = () => {
-  const { header, headerImg, center } = styles;
-
   return (
-    <header className={`${header} ${center}`}>
+    <header className={styles.header}>
       <Image
-        className={headerImg}
+        className={styles.headerImg}
         src={logo}
         alt="Breaking Bad Logo"
         priority

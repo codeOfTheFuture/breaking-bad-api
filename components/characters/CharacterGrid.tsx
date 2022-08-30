@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 import { Character } from "../../types/typings";
-import styles from "../../styles/Home.module.css";
+import styles from "./styles/CharacterGrid.module.css";
 import CharacterCard from "./CharacterCard";
 import Spinner from "../ui/Spinner";
 

@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 import { Character } from "../../types/typings";
-import styles from "../../styles/Home.module.css";
+import styles from "./styles/CharacterCard.module.css";
 import Image from "next/image";
 
 interface Props {

@@ -1,5 +1,5 @@
 import React, { FC, useState } from "react";
-import styles from "../../styles/Home.module.css";
+import styles from "./styles/Search.module.css";
 
 interface Props {
   getQuery: (query: string) => void;

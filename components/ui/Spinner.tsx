@@ -1,7 +1,7 @@
 import React, { FC } from "react";
 import Image from "next/image";
 import spinner from "../../public/assets/spinner.gif";
-import styles from "../../styles/Home.module.css";
+import styles from "./styles/Spinner.module.css";
 
 const Spinner: FC = () => {
   return (

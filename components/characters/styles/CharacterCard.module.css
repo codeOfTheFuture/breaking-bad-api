@@ -1,0 +1,74 @@
+.card {
+  cursor: pointer;
+  background-color: transparent;
+  height: 350px;
+  perspective: 1000px;
+}
+
+.card h1 {
+  font-size: 1.5rem;
+  border-bottom: 1px solid #fff;
+  padding-bottom: 0.8rem;
+  margin-bottom: 0.8rem;
+}
+
+.cardInner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.card:hover .cardInner {
+  transform: rotateY(180deg);
+}
+
+.cardFront,
+.cardBack {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.cardBack {
+  background-color: #333;
+  color: #fff;
+  padding: 1.5rem;
+  transform: rotateY(180deg);
+}
+
+.card li {
+  list-style: none;
+  padding-bottom: 0.8rem;
+}
+
+@media (max-width: 900px) {
+  .card {
+    height: 500px;
+  }
+
+  .card h1 {
+    font-size: 2.5rem;
+    border-bottom: 2px solid #fff;
+    padding-bottom: 1.2rem;
+    margin-bottom: 1.2rem;
+  }
+
+  .cardBack {
+    padding: 2rem;
+    font-size: 1.3rem;
+  }
+
+  .card li {
+    padding-bottom: 1.2rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .card {
+    height: 580px;
+  }
+}
