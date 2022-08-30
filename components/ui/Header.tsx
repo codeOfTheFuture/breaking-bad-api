@@ -8,7 +8,12 @@ const Header: FC = () => {
 
   return (
     <header className={`${header} ${center}`}>
-      <Image className={headerImg} src={logo} alt="Breaking Bad Logo" />
+      <Image
+        className={headerImg}
+        src={logo}
+        alt="Breaking Bad Logo"
+        priority
+      />
     </header>
   );
 };

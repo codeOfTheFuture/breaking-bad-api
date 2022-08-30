@@ -2,6 +2,7 @@ import { useState } from "react";
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
 import Header from "../components/ui/Header";
+import CharacterGrid from "../components/characters/CharacterGrid";
 import type { GetServerSideProps, NextPage } from "next";
 import { Character } from "../types/typings";
 
@@ -13,8 +14,6 @@ const Home: NextPage<Props> = ({ characterData }) => {
   const [characters, setCharacters] = useState(characterData);
   const [isLoading, setIsLoading] = useState(true);
 
-  console.log(characterData);
-
   return (
     <div className={styles.container}>
       <Head>
@@ -24,6 +23,7 @@ const Home: NextPage<Props> = ({ characterData }) => {
       </Head>
 
       <Header />
+      <CharacterGrid characters={characters} />
     </div>
   );
 };
