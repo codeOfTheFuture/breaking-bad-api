@@ -39,7 +39,7 @@ const Home: NextPage<Props> = ({ characterData }) => {
 
       <Header />
       <Search getQuery={query => setQuery(query)} />
-      <CharacterGrid characters={characters} />
+      <CharacterGrid characters={characters} isLoading={isLoading} />
     </div>
   );
 };
