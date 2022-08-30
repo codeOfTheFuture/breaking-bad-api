@@ -1,18 +1,33 @@
-import { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
 import Header from "../components/ui/Header";
 import CharacterGrid from "../components/characters/CharacterGrid";
 import type { GetServerSideProps, NextPage } from "next";
 import { Character } from "../types/typings";
+import Search from "../components/ui/Search";
 
 interface Props {
   characterData: Character[];
 }
 
 const Home: NextPage<Props> = ({ characterData }) => {
-  const [characters, setCharacters] = useState(characterData);
-  const [isLoading, setIsLoading] = useState(true);
+  const [characters, setCharacters] = useState<Character[]>(characterData),
+    [isLoading, setIsLoading] = useState<boolean>(false),
+    [query, setQuery] = useState<string>("");
+
+  useEffect(() => {
+    (async () => {
+      setIsLoading(true);
+      const res = await fetch(
+          `https://www.breakingbadapi.com/api/characters?name=${query}`
+        ),
+        data: Character[] = await res.json();
+
+      setCharacters(data);
+      setIsLoading(false);
+    })();
+  }, [query]);
 
   return (
     <div className={styles.container}>
@@ -23,6 +38,7 @@ const Home: NextPage<Props> = ({ characterData }) => {
       </Head>
 
       <Header />
+      <Search getQuery={query => setQuery(query)} />
       <CharacterGrid characters={characters} />
     </div>
   );

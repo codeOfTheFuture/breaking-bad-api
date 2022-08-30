@@ -1,5 +1,5 @@
-import Image from "next/image";
 import React, { FC } from "react";
+import Image from "next/image";
 import styles from "../../styles/Home.module.css";
 import logo from "../../public/assets/logo.png";
 
